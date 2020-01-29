@@ -1,10 +1,7 @@
 class Solution:
     def singleNumber(self, nums: List[int]) -> int:
-        seen = set()
-        for i in range(len(nums)):
-            if nums[i] in seen:
-                nums[i] = -nums[i]
-            else:
-                seen.add(nums[i])
+        result = 0
+        for num in nums:
+            result ^= num
 
-        return sum(nums)
+        return result

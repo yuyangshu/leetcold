@@ -5,9 +5,9 @@ class Solution:
             "}": "{",
             "]": "["
         }
-        
+
         stack = []
-        
+
         for c in s:
             if c in ["(", "{", "["]:
                 stack.append(c)

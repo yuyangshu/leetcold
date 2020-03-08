@@ -1,11 +1,11 @@
 class Solution:
     def frogPosition(self, n: int, edges: List[List[int]], t: int, target: int) -> float:
-        def is_relevant_edge(node, edge, visited):
+        def is_relevant_edge(node: int, edge: List[int], visited: set) -> bool:
             for pair in [edge, [edge[1], edge[0]]]:
                 if pair[0] == node and pair[1] not in visited:
                     return True
 
-        def fetch_other(node, edge):
+        def fetch_other(node: int, edge: List[int]):
             if edge[0] == node:
                 return edge[1]
             else:

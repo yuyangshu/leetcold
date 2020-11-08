@@ -11,7 +11,7 @@ class Solution:
                 orders -= gap * stock[0][1]
                 stock = [(stock[1][0], stock[1][1] + stock[0][1])] + stock[2:]
             else:
-                # batch * stock[0][1] == orders
+                # gap * stock[0][1] == orders
                 batch = orders // stock[0][1]
                 result += (stock[0][0] + stock[0][0] - batch + 1) * batch * stock[0][1] // 2 + (stock[0][0] - batch) * (orders % stock[0][1])
                 return result % (pow(10, 9) + 7)
